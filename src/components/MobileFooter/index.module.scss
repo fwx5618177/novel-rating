@@ -1,0 +1,79 @@
+@mixin mobile-footer {
+  position: fixed;
+
+  margin: 0.3rem auto;
+  padding: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 90%;
+
+  background-color: #1e1e1e;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 -2px 5px #00000033;
+  border: 1px solid #ffffff33;
+  border-radius: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: clamp(0.4rem, 3vw, 3rem);
+  place-items: center;
+}
+
+.footer {
+  display: none;
+
+  @include respond-to(xs) {
+    @include mobile-footer;
+  }
+
+  @include respond-to(sm) {
+    @include mobile-footer;
+  }
+
+  button {
+    padding: clamp(0.2rem, 1.5vw, 1.5rem) clamp(0.5rem, 5vw, 3rem);
+    border: none;
+    background-color: #333;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 6px rgba(#ffffff, 0.2);
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: #444; // 悬停时稍微变亮
+      box-shadow: 0 6px 10px rgba(#ffffff, 0.3);
+      transform: translateY(-2px); // 悬浮效果
+    }
+
+    &:active {
+      background-color: #555;
+      transform: translateY(0);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  @media (max-width: 300px) {
+    & {
+      max-height: 6rem;
+      grid-template-columns: repeat(2, 1fr);
+      background-color: rgba(#1e1e1e, 0.4);
+    }
+
+    button {
+      width: 100%;
+      padding: 0.1rem 1rem;
+      font-size: 0.5rem;
+    }
+  }
+}

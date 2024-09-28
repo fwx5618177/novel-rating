@@ -1,0 +1,60 @@
+.header {
+  width: 100%;
+  height: clamp(3.5rem, 10vw, 5rem);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: #1e1e1e;
+  box-shadow: 0px 4px 8px rgba(#ffffff, 0.2);
+
+  .logo {
+    margin-left: clamp(1rem, 2vw, 1.5rem);
+    width: clamp(5rem, 10vw, 8rem);
+  }
+
+  .rightSide {
+    margin-right: clamp(1rem, 2vw, 1.5rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-bar input {
+      padding: 5px;
+    }
+
+    .actions {
+      padding: 5px 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+
+      @include respond-to(xl) {
+        padding: 7px 14px;
+        font-size: 18px;
+      }
+
+      @include respond-to(lg) {
+        padding: 6px 12px;
+        font-size: 16px;
+      }
+
+      @include respond-to(md) {
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+
+      @include respond-to(sm) {
+        padding: 5px 9px;
+        font-size: 14px;
+      }
+
+      @include respond-to(xs) {
+        padding: 4px 8px;
+        font-size: 12px;
+      }
+    }
+  }
+}

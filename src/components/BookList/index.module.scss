@@ -1,0 +1,45 @@
+@mixin small-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); // 2 列布局
+  grid-gap: 20px; // 间距
+  padding: 20px; // 内边距
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); // 大屏幕下每行展示 4 本书
+  grid-gap: 20px;
+  padding: 20px;
+
+  // 子项水平和垂直居中
+  justify-items: center;
+  align-items: center;
+
+  @include respond-to(xl) {
+    grid-template-columns: repeat(4, 1fr); // 大屏幕，4 列布局
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr); // 较大屏幕，3 列布局
+  }
+
+  @include respond-to(md) {
+    @include small-grid; // 中等屏幕，2 列布局
+  }
+
+  @include respond-to(sm) {
+    @include small-grid; // 小屏幕，2 列布局
+  }
+
+  @include respond-to(xs) {
+    @include small-grid; // 超小屏幕，2 列布局
+  }
+}
+
+// 卡片样式（参考）
+.book-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

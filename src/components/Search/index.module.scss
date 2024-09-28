@@ -1,0 +1,123 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .searchIconButton {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: #666;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #007bff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .inputWrapper {
+    width: 0;
+    transition: all 1s ease-in-out;
+
+    &.expanded {
+      width: 20rem;
+    }
+  }
+
+  &.right {
+    .inputWrapper {
+      margin: 8px;
+      width: 100%;
+    }
+  }
+
+  &.left {
+    flex-direction: row-reverse;
+
+    .inputWrapper {
+      margin: 8px;
+      width: 100%;
+    }
+  }
+}
+
+@include respond-to(xxl) {
+  .searchContainer {
+    .inputWrapper {
+      width: 350px;
+    }
+
+    .searchIconButton {
+      font-size: 26px;
+    }
+  }
+}
+
+@include respond-to(xl) {
+  .searchContainer {
+    .inputWrapper {
+      width: 300px;
+    }
+
+    .searchIconButton {
+      font-size: 24px;
+    }
+  }
+}
+
+@include respond-to(lg) {
+  .searchContainer {
+    .inputWrapper {
+      width: 250px;
+    }
+
+    .searchIconButton {
+      font-size: 22px;
+    }
+  }
+}
+
+@include respond-to(sm) {
+  .searchContainer {
+    .inputWrapper {
+      width: 150px;
+    }
+
+    .searchIconButton {
+      font-size: 18px;
+    }
+  }
+}
+
+@include respond-to(md) {
+  .searchContainer {
+    .inputWrapper {
+      width: 100%;
+    }
+
+    .searchIconButton {
+      font-size: 20px;
+    }
+  }
+}
+
+@include respond-to(xs) {
+  .searchContainer {
+    .inputWrapper {
+      width: 100%;
+    }
+
+    .searchIconButton {
+      font-size: 16px;
+    }
+  }
+}

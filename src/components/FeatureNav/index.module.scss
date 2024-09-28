@@ -1,0 +1,59 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(#ffffff, 1);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+
+  margin: 0.4rem auto;
+  padding: 10px;
+  width: 95%;
+
+  border-radius: 10px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    margin: 0.4rem 0.8rem;
+    color: #000;
+    cursor: pointer;
+    box-sizing: content-box;
+
+    &:hover {
+      color: rgba(#007bff, 0.6);
+      border-bottom: 1px solid #007bff;
+    }
+
+    .icon {
+      color: #007bff;
+    }
+
+    span {
+      font-size: 1rem;
+      font-weight: 600;
+
+      @include respond-to(xs) {
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      @include respond-to(sm) {
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      @include respond-to(md) {
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      @include respond-to(lg) {
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.commentSection {
+  background-color: #1e1e1e;
+  padding: 15px 0;
+  border-radius: 8px;
+  width: 100%;
+  max-height: 500px;
+  margin-top: 10px;
+  color: #ffffff;
+  max-width: 100%;
+
+  @include respond-to(xs) {
+    padding: 10px;
+    max-height: 400px;
+  }
+
+  .commentInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+
+    textarea {
+      resize: none;
+      padding: 10px;
+      background-color: #2a2a2a;
+      color: #fff;
+      border: 1px solid #555;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      max-width: 100%;
+    }
+
+    .submitButton {
+      align-self: flex-end;
+      background-color: #007bff;
+      color: #fff;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    .replyingTo {
+      margin-bottom: 5px;
+      color: #ffa500;
+    }
+  }
+
+  .commentsList {
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+
+    @include respond-to(xs) {
+      max-height: 250px;
+    }
+
+    .comment {
+      background: #2a2a2a;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+
+      .commentHeader {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+        width: 100%;
+
+        .avatar {
+          width: 40px;
+          height: 40px;
+          border: 1px solid rgba(#ffffff, 0.5);
+          border-radius: 50%;
+          margin-right: 10px;
+          cursor: pointer;
+        }
+
+        strong {
+          cursor: pointer;
+        }
+
+        .time {
+          margin-left: auto;
+          font-size: 12px;
+          color: #aaaaaa;
+        }
+      }
+
+      .replies {
+        margin-top: 10px;
+        padding-left: 20px;
+        border-left: 2px solid #444;
+      }
+    }
+  }
+
+  .closeButton {
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      color: #ff4500;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@mixin footer-hide {
+  display: none;
+}
+
+.footer {
+  bottom: 0;
+  background-color: #1e1e1e; // 暗黑主题背景色
+  color: #ffffff;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5); // 提升层次感的阴影
+
+  @include respond-to(xs) {
+    @include footer-hide;
+  }
+
+  @include respond-to(sm) {
+    @include footer-hide;
+  }
+
+  @include respond-to(md) {
+    padding: 40px 60px;
+  }
+
+  @include respond-to(lg) {
+    padding: 50px 0;
+  }
+
+  @include respond-to(xl) {
+    padding: 60px 0;
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+
+    a {
+      color: #bbb; // 链接颜色
+      text-decoration: none;
+      font-size: 16px;
+      transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+      &:hover {
+        color: #ffffff; // 悬停时的链接颜色
+        transform: translateY(-3px); // 悬停时有轻微的上移效果
+      }
+
+      &:active {
+        transform: translateY(0); // 点击时恢复原位置
+      }
+    }
+
+    @include respond-to(sm) {
+      flex-direction: column;
+      gap: 15px;
+    }
+  }
+
+  .copyright {
+    font-size: 14px;
+    color: #888888; // 较暗的版权声明文字颜色
+
+    @include respond-to(xs) {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@mixin mobile-home {
+  padding-bottom: calc(100% - 10rem);
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  @include respond-to(xs) {
+    @include mobile-home;
+  }
+
+  @include respond-to(sm) {
+    @include mobile-home;
+  }
+}

@@ -1,0 +1,76 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ['main', 'develop', 'test']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages-${{ github.ref_name }}'
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ github.ref_name == 'main' && 'production' || (github.ref_name == 'develop' && 'develop' || 'test') }}
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.10.0'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@latest --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Project
+        run: pnpm build
+
+      # - name: Build Project
+      #   run: |
+      #     if [ "${{ github.ref_name }}" == "main" ]; then
+      #       pnpm build:spa
+      #     elif [ "${{ github.ref_name }}" == "develop" ]; then
+      #       pnpm build:spa
+      #     else
+      #       pnpm build:spa
+      #     fi
+
+      - name: Move to destination path
+        run: |
+          if [ "${{ github.ref_name }}" == "main" ]; then
+            mv ./dist ~/deploy
+          elif [ "${{ github.ref_name }}" == "develop" ]; then
+            mkdir -p ~/deploy/develop && mv ./dist/* ~/deploy/develop
+          else
+            mkdir -p ~/deploy/test && mv ./dist/* ~/deploy/test
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '~/deploy'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

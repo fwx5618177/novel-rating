@@ -1,0 +1,90 @@
+.bookDetail {
+  width: 100%;
+  max-width: clamp(25rem, 80vw, 30rem);
+  height: 100%;
+  // max-height: clamp(40rem, 100vw, 45rem);
+  padding: clamp(1rem, 2.5vw, 1.5em);
+  background-color: #1e1e1e;
+  border-radius: 0.9rem;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: clamp(0.2rem, 2.5vw, 0.5rem);
+
+    .recommender {
+      display: flex;
+      align-items: center;
+
+      .avatar {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 1px solid rgba(#ffffff, 0.5);
+      }
+
+      span {
+        margin-left: 0.8rem;
+        font-size: clamp(1rem, 2.5vw, 1.5em);
+        color: #ffffff;
+      }
+    }
+  }
+
+  .bookContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bookCover {
+      width: 100%;
+      height: auto;
+      max-width: clamp(15rem, 80vw, 17rem);
+      max-height: clamp(22rem, 100vw, 25rem);
+      border-radius: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .bookInfo {
+      text-align: center;
+
+      h2 {
+        font-size: clamp(1rem, 2.5vw, 1.2em);
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: clamp(0.8rem, 2.5vw, 1em);
+        color: #aaaaaa;
+      }
+
+      .summary {
+        font-size: 14px;
+        color: #cccccc;
+      }
+
+      .toggleButton {
+        background: none;
+        border: none;
+        color: #007bff;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 20px;
+
+    .timeInfo {
+      font-size: 12px;
+      color: #aaaaaa;
+      text-align: left;
+    }
+  }
+}

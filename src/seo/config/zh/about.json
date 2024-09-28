@@ -1,0 +1,25 @@
+{
+  "title": "About - 我的应用",
+  "description": "这是我的应用的默认描述。",
+  "keywords": "默认，关键词，我的应用",
+  "ogTitle": "我的应用",
+  "ogDescription": "这是我的应用的默认 Open Graph 描述。",
+  "ogImage": "/default-og-image.png",
+  "twitterTitle": "我的应用",
+  "twitterDescription": "这是我的应用的默认 Twitter 描述。",
+  "twitterImage": "/default-twitter-image.png",
+  "hreflang": [
+    {
+      "lang": "en",
+      "url": "https://example.com/en/"
+    },
+    {
+      "lang": "es",
+      "url": "https://example.com/es/"
+    },
+    {
+      "lang": "fr",
+      "url": "https://example.com/fr/"
+    }
+  ]
+}

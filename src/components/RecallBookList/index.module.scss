@@ -1,0 +1,142 @@
+.bookList {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px; // 保持网格之间的间距充足
+  place-items: center;
+
+  @include respond-to(xs) {
+    padding: 5px;
+    grid-template-columns: repeat(1, 1fr); // 超小屏幕下一列
+  }
+
+  @include respond-to(sm) {
+    padding: 10px;
+    grid-gap: 20px;
+    grid-template-columns: repeat(1, minmax(20rem, 1fr)); // 小屏幕下两列
+  }
+
+  @include respond-to(md) {
+    grid-template-columns: repeat(2, 1fr); // 中等屏幕下两列
+  }
+
+  @include respond-to(lg) {
+    grid-template-columns: repeat(3, 1fr); // 大屏幕下三列
+  }
+
+  @include respond-to(xl) {
+    grid-template-columns: repeat(auto-fill, 1fr); // 更大屏幕保持四列
+  }
+}
+
+.bookDetail {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include respond-to(xs) {
+    width: 100%; // 超小屏幕下全宽
+    padding: 10px;
+  }
+
+  @include respond-to(sm) {
+    width: 100%; // 小屏幕下全宽
+  }
+
+  @include respond-to(md) {
+    width: 100%; // 中等屏幕下全宽，不需要具体宽度
+  }
+
+  @include respond-to(lg) {
+    width: 100%; // 大屏幕下也保持一致宽度
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .recommender {
+      display: flex;
+      align-items: center;
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      span {
+        font-size: 16px;
+        color: #ffffff;
+      }
+    }
+  }
+
+  .bookContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .bookCover {
+      width: 100%;
+      height: auto;
+      max-width: 280px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .bookInfo {
+      text-align: center;
+
+      h2 {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .description {
+        font-size: 14px;
+        color: #aaaaaa;
+        max-height: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; // 限制为3行
+        -webkit-box-orient: vertical;
+      }
+
+      .summary {
+        font-size: 14px;
+        color: #cccccc;
+      }
+
+      .toggleButton {
+        background: none;
+        border: none;
+        color: #007bff;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .footer {
+    margin-top: 20px;
+
+    .timeInfo {
+      font-size: 12px;
+      color: #aaaaaa;
+      text-align: left;
+    }
+  }
+}

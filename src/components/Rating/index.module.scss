@@ -1,0 +1,72 @@
+.ratingWrapper {
+  text-align: center;
+  margin-top: 10px;
+
+  @include respond-to(xs) {
+    margin-top: 5px;
+  }
+}
+
+.ratingStars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  .star {
+    font-size: 2em;
+    transition:
+      transform 0.3s ease,
+      color 0.3s ease;
+
+    @include respond-to(xs) {
+      font-size: 1.5em; // 移动端星星大小稍小
+    }
+
+    @include respond-to(md) {
+      font-size: 1.8em; // 中等屏幕下星星大小略小
+    }
+
+    @include respond-to(lg) {
+      font-size: 2em; // 大屏幕下保持原大小
+    }
+  }
+
+  .filled {
+    color: #ffd700; // 金色星星
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); // 阴影增强立体感
+  }
+
+  .empty {
+    color: #555555; // 暗灰色星星
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); // 添加轻微阴影
+  }
+
+  .disabled {
+    pointer-events: none; // 禁用点击事件
+    color: #777777; // 灰色显示
+  }
+
+  .ratingValue {
+    margin-left: 10px;
+    font-size: 1.5em;
+    color: #ffd700; // 与星星颜色一致
+
+    @include respond-to(xs) {
+      font-size: 1.2em; // 移动端的数字评分略小
+    }
+
+    @include respond-to(md) {
+      font-size: 1.4em; // 中等屏幕下的数字评分稍小
+    }
+  }
+
+  .star:active {
+    transform: scale(1.3); // 点击时弹跳效果
+  }
+
+  .star:hover {
+    transform: scale(1.1); // 悬停时放大
+  }
+}
