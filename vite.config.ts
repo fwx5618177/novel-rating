@@ -6,6 +6,7 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 import { VitePWA } from 'vite-plugin-pwa';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
 
+import pkg from './package.json';
 import { PwaConfig } from './scripts/pwa';
 
 export default defineConfig(({ mode }) => {
@@ -26,7 +27,7 @@ export default defineConfig(({ mode }) => {
         : './dist';
 
   return {
-    base: './',
+    base: isSPA ? `./${pkg.name}` : isSSG ? './' : '/',
     define: {
       'process.env.isSSR': isSSR,
       'process.env.isSSG': isSSG,
