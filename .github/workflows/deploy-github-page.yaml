@@ -56,17 +56,17 @@ jobs:
       - name: Move to destination path
         run: |
           if [ "${{ github.ref_name }}" == "main" ]; then
-            mv ./dist /root/deploy
+            mv ./dist /home/runner/work/novel-rating
           elif [ "${{ github.ref_name }}" == "develop" ]; then
-            mkdir -p /root/deploy/develop && mv ./dist/* /root/deploy/develop
+            mkdir -p /home/runner/work/novel-rating/develop && mv ./dist/* /home/runner/work/novel-rating/develop
           else
-            mkdir -p /root/deploy/test && mv ./dist/* /root/deploy/test
+            mkdir -p /home/runner/work/novel-rating/test && mv ./dist/* /home/runner/work/novel-rating/test
           fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '/root/deploy'
+          path: '/home/runner/work/novel-rating'
 
       - name: Deploy to GitHub Pages
         id: deployment
