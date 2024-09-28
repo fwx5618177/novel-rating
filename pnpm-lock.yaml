@@ -12,10 +12,10 @@ importers:
         specifier: ^1.7.4
         version: 1.7.4
       express:
-        specifier: ^4.19.2
+        specifier: ^4.21.0
         version: 4.21.0
       i18next:
-        specifier: ^23.14.0
+        specifier: ^23.15.1
         version: 23.15.1
       react:
         specifier: ^18.3.1
@@ -27,19 +27,19 @@ importers:
         specifier: ^2.0.5
         version: 2.0.5(react@18.3.1)
       react-i18next:
-        specifier: ^15.0.1
+        specifier: ^15.0.2
         version: 15.0.2(i18next@23.15.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-icons:
         specifier: ^5.3.0
         version: 5.3.0(react@18.3.1)
       react-router-dom:
-        specifier: ^6.26.1
+        specifier: ^6.26.2
         version: 6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       sass:
-        specifier: ^1.77.8
+        specifier: ^1.79.4
         version: 1.79.4
       typescript:
-        specifier: ^5.5.3
+        specifier: ^5.6.2
         version: 5.6.2
     devDependencies:
       '@eslint/compat':
@@ -49,7 +49,7 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0
       '@eslint/js':
-        specifier: ^9.9.0
+        specifier: ^9.11.1
         version: 9.11.1
       '@types/compression':
         specifier: ^1.7.5
@@ -58,52 +58,52 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       '@types/node':
-        specifier: ^22.5.0
+        specifier: ^22.7.4
         version: 22.7.4
       '@types/react':
-        specifier: ^18.3.3
+        specifier: ^18.3.10
         version: 18.3.10
       '@types/react-dom':
         specifier: ^18.3.0
         version: 18.3.0
       '@typescript-eslint/eslint-plugin':
-        specifier: ^8.2.0
+        specifier: ^8.7.0
         version: 8.7.0(@typescript-eslint/parser@8.7.0(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)(typescript@5.6.2)
       '@typescript-eslint/parser':
-        specifier: ^8.2.0
+        specifier: ^8.7.0
         version: 8.7.0(eslint@9.11.1)(typescript@5.6.2)
       '@vitejs/plugin-react-swc':
-        specifier: ^3.5.0
+        specifier: ^3.7.0
         version: 3.7.0(vite@5.4.8(@types/node@22.7.4)(sass@1.79.4)(terser@5.34.1))
       '@webgpu/types':
-        specifier: ^0.1.44
+        specifier: ^0.1.46
         version: 0.1.46
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
       eslint:
-        specifier: ^9.9.0
+        specifier: ^9.11.1
         version: 9.11.1
       eslint-config-prettier:
         specifier: ^9.1.0
         version: 9.1.0(eslint@9.11.1)
       eslint-plugin-import:
-        specifier: ^2.29.1
+        specifier: ^2.30.0
         version: 2.30.0(@typescript-eslint/parser@8.7.0(eslint@9.11.1)(typescript@5.6.2))(eslint@9.11.1)
       eslint-plugin-jsx-a11y:
-        specifier: ^6.9.0
+        specifier: ^6.10.0
         version: 6.10.0(eslint@9.11.1)
       eslint-plugin-prettier:
         specifier: ^5.2.1
         version: 5.2.1(eslint-config-prettier@9.1.0(eslint@9.11.1))(eslint@9.11.1)(prettier@3.3.3)
       eslint-plugin-react:
-        specifier: ^7.35.0
+        specifier: ^7.37.0
         version: 7.37.0(eslint@9.11.1)
       eslint-plugin-react-hooks:
-        specifier: ^5.1.0-rc.0
+        specifier: 5.1.0-rc-fb9a90fa48-20240614
         version: 5.1.0-rc-fb9a90fa48-20240614(eslint@9.11.1)
       eslint-plugin-react-refresh:
-        specifier: ^0.4.9
+        specifier: ^0.4.12
         version: 0.4.12(eslint@9.11.1)
       globals:
         specifier: ^15.9.0
@@ -121,19 +121,19 @@ importers:
         specifier: ^8.0.0
         version: 8.0.0
       typescript-eslint:
-        specifier: ^8.0.1
+        specifier: ^8.7.0
         version: 8.7.0(eslint@9.11.1)(typescript@5.6.2)
       vite:
-        specifier: ^5.4.1
+        specifier: ^5.4.8
         version: 5.4.8(@types/node@22.7.4)(sass@1.79.4)(terser@5.34.1)
       vite-node:
-        specifier: ^2.0.5
+        specifier: ^2.1.1
         version: 2.1.1(@types/node@22.7.4)(sass@1.79.4)(terser@5.34.1)
       vite-plugin-html:
         specifier: ^3.2.2
         version: 3.2.2(vite@5.4.8(@types/node@22.7.4)(sass@1.79.4)(terser@5.34.1))
       vite-plugin-pwa:
-        specifier: ^0.20.1
+        specifier: ^0.20.5
         version: 0.20.5(vite@5.4.8(@types/node@22.7.4)(sass@1.79.4)(terser@5.34.1))(workbox-build@7.1.1)(workbox-window@7.1.0)
       vite-tsconfig-paths:
         specifier: ^5.0.1

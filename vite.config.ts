@@ -44,7 +44,7 @@ export default defineConfig(({ mode }) => {
           ]
         : []),
       react(),
-      // VitePWA(PwaConfig),
+      VitePWA(PwaConfig),
       viteTsconfigPaths(),
     ],
     resolve: {
